@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logowanie</title>
+  <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      body {
+          font-family: 'Arial', sans-serif;
+          background: url('https://d41chssnpqdne.cloudfront.net/user_upload_by_module/chat_bot/files/100902200/HTr320JGPsE6LmHq.png?Expires=1743969210&Signature=fWx1HL5whzDOHPAwo5JX3WO6cJtn90oRTIQzD-eMTrral3FTU1dqAWjhOzB9cSmmT5DKDT~fo8vfMICJsWQCxkqox8ywfeF5BKVHEr4uHpc0n0337Wl6j~7mhDKmtWyfZfDZt8SRqZzJLXQYJCAYyaA3AFgypAoTjJr2bGk6lRREW5sRaFRmSHEb3qkZhexoYJowKgpz3ZuMJETGeD0R335IJqDFPK7dxB43YLHWGdg8vXl1-Z-wOlpJ8QGME2EhelbjpbQjqrSZiBpkMIGOqMQD3sbTyFTL6fui4znGQWWaa-gdMmHinj1RWonhLGQ2ZVzZQ6O-QJB0tWBIZJ~DRw__&Key-Pair-Id=K3USGZIKWMDCSX') no-repeat center center fixed;
+          background-size: cover;
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          text-align: center;
+      }
+      .container {
+          background: rgba(0, 0, 0, 0.7);
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+          width: 90%;
+          max-width: 400px;
+      }
+      h1 {
+          font-size: 1.8rem;
+          margin-bottom: 20px;
+      }
+      form {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+      }
+      input {
+          padding: 10px;
+          font-size: 1rem;
+          border: none;
+          border-radius: 5px;
+          outline: none;
+      }
+      button {
+          padding: 10px;
+          font-size: 1rem;
+          border: none;
+          border-radius: 5px;
+          background: #4facfe;
+          color: #fff;
+          cursor: pointer;
+          transition: background 0.3s;
+      }
+      button:hover {
+          background: #00c6ff;
+      }
+      #hidden-links {
+          display: none;
+          margin-top: 20px;
+      }
+      ul {
+          list-style: none;
+          padding: 0;
+      }
+      ul li {
+          margin: 10px 0;
+      }
+      ul li a {
+          color: #4facfe;
+          text-decoration: none;
+          font-weight: bold;
+          transition: color 0.3s;
+      }
+      ul li a:hover {
+          color: #00c6ff;
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+      <h1>Zaloguj się</h1>
+      <form id="login-form">
+          <input type="text" id="username" placeholder="Wpisz nazwę użytkownika" required>
+          <input type="password" id="password" placeholder="Wpisz hasło" required>
+          <button type="submit">Zaloguj się</button>
+      </form>
+      <div id="hidden-links">
+          <h2>Linki do plików</h2>
+          <ul>
+              <li><a href="link_do_mapy_1">vBKM Mapa</a></li>
+              <li><a href="link_do_mapy_2">vBKM Pojazdy (bez stref)</a></li>
+              <li><a href="link_do_pojazdu_1">MZKP Mapa</a></li>
+              <li><a href="link_do_pojazdu_2">MZKP Pojazdy</a></li>
+          </ul>
+      </div>
+  </div>
+  <script>
+      const correctUsername = "pawdan"; // Zmień na swoją nazwę użytkownika
+      const correctPassword = "Kochamvbkm"; // Zmień na swoje hasło
+      const form = document.getElementById("login-form");
+      const hiddenLinks = document.getElementById("hidden-links");
+
+      form.addEventListener("submit", function(event) {
+          event.preventDefault();
+          const usernameInput = document.getElementById("username").value;
+          const passwordInput = document.getElementById("password").value;
+
+          if (usernameInput === correctUsername && passwordInput === correctPassword) {
+              hiddenLinks.style.display = "block";
+              form.style.display = "none";
+          } else {
+              alert("Niepoprawna nazwa użytkownika lub hasło! Spróbuj ponownie.");
+          }
+      });
+  </script>
+</body>
+</html>
